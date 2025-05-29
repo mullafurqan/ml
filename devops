@@ -1,0 +1,248 @@
+Here are the Lab Experiments 1 to 7 extracted from the uploaded PDF “Devops-Lab-Manual (3).pdf”:
+
+⸻
+
+Lab Experiment 1
+
+Title: Installation of Virtual Box and Ubuntu
+
+Aim:
+To install VirtualBox and Ubuntu OS in it to create an environment for DevOps practices.
+
+Requirements:
+	•	VirtualBox installer
+	•	Ubuntu ISO image
+
+Procedure:
+	1.	Download and install VirtualBox.
+	2.	Download the Ubuntu ISO file from the official website.
+	3.	Open VirtualBox and click on “New” to create a new virtual machine.
+	4.	Name the VM and select type as Linux and version as Ubuntu.
+	5.	Allocate memory (RAM) to the VM.
+	6.	Create a virtual hard disk and allocate size.
+	7.	Mount the Ubuntu ISO to the VM’s optical drive.
+	8.	Start the VM and follow the steps to install Ubuntu OS.
+	9.	Complete the installation and restart the VM.
+
+Result:
+Ubuntu OS successfully installed inside VirtualBox.
+
+⸻
+
+Lab Experiment 2
+
+Title: Installation of Git on Ubuntu
+
+Aim:
+To install Git on Ubuntu OS and perform basic Git configuration.
+
+Procedure:
+	1.	Open the terminal in Ubuntu.
+	2.	Run the command:
+
+sudo apt update  
+sudo apt install git  
+
+
+	3.	Verify installation using:
+
+git --version  
+
+
+	4.	Configure Git:
+
+git config --global user.name "Your Name"  
+git config --global user.email "youremail@example.com"  
+
+
+
+Result:
+Git successfully installed and configured on Ubuntu.
+
+⸻
+
+Lab Experiment 3
+
+Title: Create and Configure a GitHub Account
+
+Aim:
+To create a GitHub account and understand how to create a repository.
+
+Procedure:
+	1.	Visit https://github.com and sign up for a new account.
+	2.	Verify email address.
+	3.	Log in and create a new repository:
+	•	Click “New”
+	•	Give it a name
+	•	Choose public/private
+	•	Initialize with README
+	4.	Note the repository URL to use with Git.
+
+Result:
+GitHub account and repository created successfully.
+
+⸻
+
+Lab Experiment 4
+
+Title: Clone, Commit, Push, and Pull Using Git
+
+Aim:
+To understand and perform Git operations such as clone, add, commit, push, and pull.
+
+Procedure:
+	1.	Clone repository:
+
+git clone https://github.com/yourusername/your-repo.git  
+
+
+	2.	Make changes to the local repository.
+	3.	Add changes:
+
+git add .  
+
+
+	4.	Commit changes:
+
+git commit -m "commit message"  
+
+
+	5.	Push changes:
+
+git push origin main  
+
+
+	6.	To pull updates from GitHub:
+
+git pull origin main  
+
+
+
+Result:
+Basic Git operations performed successfully.
+
+⸻
+
+Lab Experiment 5
+
+Title: Creating and Managing Docker Containers
+
+Aim:
+To install Docker and perform basic container operations.
+
+Procedure:
+	1.	Install Docker:
+
+sudo apt install docker.io  
+
+
+	2.	Check Docker version:
+
+docker --version  
+
+
+	3.	Run hello-world container:
+
+sudo docker run hello-world  
+
+
+	4.	List containers:
+
+docker ps -a  
+
+
+	5.	Remove container:
+
+docker rm <container_id>  
+
+
+	6.	Pull an image from Docker Hub:
+
+docker pull ubuntu  
+
+
+	7.	Run Ubuntu container:
+
+docker run -it ubuntu  
+
+
+
+Result:
+Docker containers created and basic operations performed successfully.
+
+⸻
+
+Lab Experiment 6
+
+Title: Write Dockerfile and Create Image
+
+Aim:
+To write a Dockerfile and build a Docker image from it.
+
+Procedure:
+	1.	Create a directory and navigate into it.
+	2.	Create a file named Dockerfile with the following content:
+
+FROM ubuntu  
+RUN apt update && apt install -y nginx  
+CMD ["nginx", "-g", "daemon off;"]  
+
+
+	3.	Build the Docker image:
+
+docker build -t mynginximage .  
+
+
+	4.	Run the image:
+
+docker run -d -p 8080:80 mynginximage  
+
+
+
+Result:
+Dockerfile written and custom image built and run successfully.
+
+⸻
+
+Lab Experiment 7
+
+Title: Install Jenkins and Create a Pipeline
+
+Aim:
+To install Jenkins and create a basic CI/CD pipeline.
+
+Procedure:
+	1.	Install Java:
+
+sudo apt install openjdk-11-jdk  
+
+
+	2.	Add Jenkins repository and key:
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -  
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'  
+
+
+	3.	Install Jenkins:
+
+sudo apt update  
+sudo apt install jenkins  
+
+
+	4.	Start Jenkins:
+
+sudo systemctl start jenkins  
+
+
+	5.	Access Jenkins via browser: http://localhost:8080
+	6.	Unlock Jenkins using initial password.
+	7.	Install suggested plugins.
+	8.	Create a new job (Pipeline).
+	9.	Define a basic pipeline script and save.
+
+Result:
+Jenkins installed and a simple pipeline job created successfully.
+
+⸻
+
+Let me know if you need these compiled into a Word or text document.
