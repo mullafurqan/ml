@@ -1,0 +1,124 @@
+Experiment 1: Introduction to Maven and Gradle
+•  What is DevOps?
+	•  Combines development (Dev) and IT operations (Ops) to shorten development cycles, enhance collaboration, automate tasks, enable CI/CD, and improve monitoring.
+	•  Benefits: Speed, quality, reliability, efficiency, scalability.
+	•  Examples: CI with Jenkins, CD with automated deployments, monitoring with Prometheus/Grafana.
+•  Maven Overview:
+	•  Build automation tool for Java projects using a POM (Project Object Model) XML file.
+	•  Features: Standard directory structure, dependency management, fixed build lifecycle, plugin ecosystem.
+•  Gradle Overview:
+	•  Modern, flexible build tool using Groovy/Kotlin DSL.
+	•  Features: Incremental builds, multi-project support, parallel execution, extensibility.
+•  Why Use Them?
+	•  Automate builds/tests, ensure consistent environments, integrate with CI/CD, manage dependencies.
+•  Installation:
+	•  Maven: Update system, install Java 11, install Maven, verify with mvn -version.
+	•  Gradle: Install from repositories or manually (download, unzip, set PATH), verify with gradle -v.
+•  Differences:
+	•  Maven: XML-based, declarative, rigid lifecycle.
+	•  Gradle: Groovy/Kotlin DSL, flexible, task-based, faster for large projects.
+
+Experiment 2: Working with Maven
+•  Introduction:
+	•  Maven simplifies builds with standard structure, dependency management, and plugins.
+•  Creating a Maven Project:
+	•  Use mvn archetype:generate with parameters (groupId, artifactId, etc.) to create a project (e.g., MyMavenApp).
+	•  Navigate to project directory with cd MyMavenApp.
+•  Project Layout:
+	•  pom.xml: Configuration file.
+	•  src/main/java: Application code.
+	•  src/test/java: Test code.
+•  POM File:
+	•  Defines project coordinates (groupId, artifactId, version), dependencies, and plugins.
+	•  Example: Includes JUnit dependency, compiler plugin.
+•  Dependency Management:
+	•  Automatically downloads dependencies (e.g., JUnit), handles transitive dependencies.
+•  Plugins:
+	•  Examples: maven-compiler-plugin (compiles code), maven-surefire-plugin (runs tests).
+•  Commands:
+	•  mvn compile, mvn test, mvn package, mvn clean.
+
+Experiment 3: Working with Gradle
+•  Introduction:
+	•  Flexible, fast build tool with Groovy/Kotlin DSL, incremental builds, task automation.
+•  Setting Up a Gradle Project:
+	•  Run gradle init --type java-application to create a project (e.g., HelloGradle).
+	•  Structure: build.gradle, settings.gradle, src/main/java, src/test/java.
+•  Build Scripts:
+	•  Groovy DSL: Defines plugins, repositories, dependencies, custom tasks (e.g., hello task).
+	•  Kotlin DSL: Similar structure with Kotlin syntax.
+•  Dependency Management:
+	•  Uses repositories (e.g., Maven Central), configurations (e.g., testImplementation).
+•  Task Automation:
+	•  Built-in tasks: compileJava, test, jar, run.
+	•  Custom tasks: Define with task or tasks.register.
+•  Commands:
+	•  gradle build (compile, test, package), gradle run, gradle hello.
+
+Experiment 4: Practical Exercise - Build and Migrate
+•  Part A: Maven:
+	•  Create project with mvn archetype:generate (e.g., HelloMaven).
+	•  Build with mvn package, run with java -cp target/HelloMaven-1.0-SNAPSHOT.jar com.example.App (outputs “Hello World!”).
+•  Part B: Migrate to Gradle:
+	•  Create Gradle project with gradle init --type java-application (e.g., HelloMavenGradle).
+	•  Copy Maven code, update build.gradle, build with gradle build, run with gradle run.
+
+Experiment 5: Introduction to Jenkins
+•  What is Jenkins?
+	•  Open-source CI/CD tool for automating builds, tests, and deployments.
+•  Installation:
+	•  Install Java, download Jenkins WAR, run with java -jar jenkins.war, access at http://localhost:8080.
+•  Setup:
+	•  Install suggested plugins, create admin user.
+
+Experiment 6: Creating a Jenkins Pipeline
+•  Pipeline Basics:
+	•  Define workflows using a Jenkinsfile (Declarative or Scripted syntax).
+•  Example Jenkinsfile:
+	•  Stages: Checkout, Build, Test, Post-actions (archive reports, notify success/failure).
+•  Run Pipeline:
+	•  Create a Freestyle/Pipeline job, configure SCM, add Jenkinsfile, trigger build, verify results.
+
+Experiment 7: Configuration Management with Ansible
+•  What is Ansible?
+	•  Agentless automation tool for configuration, deployment, orchestration.
+	•  Key concepts: Inventory, playbooks, modules.
+•  Installation:
+	•  Install with sudo apt install ansible, verify with ansible --version.
+•  Inventory:
+	•  Create hosts.ini (e.g., [local] localhost ansible_connection=local).
+•  Playbook:
+	•  Create setup.yml to update apt cache and install curl.
+	•  Run with ansible-playbook -i hosts.ini setup.yml.
+•  Advanced Use:
+	•  Configure services, manage files, users with modules like service, copy, user.
+
+Experiment 8: Jenkins CI with Ansible Deployment
+•  Overview:
+	•  Build Maven project, deploy with Ansible.
+•  Steps:
+	•  Configure Jenkins job with Git SCM, Maven build (clean package), archive artifact.
+	•  Add Ansible post-build step (ansible-playbook -i hosts.ini deploy.yml).
+	•  Create deploy.yml to copy artifact to target directory.
+	•  Trigger build, verify deployment.
+
+Experiment 9: Introduction to Azure DevOps
+•  Overview:
+	•  Suite of services: Repos, Pipelines, Boards, Test Plans, Artifacts.
+•  Setup:
+	•  Sign up at https://dev.azure.com, create organization, project (e.g., HelloDevops).
+
+Experiment 10: Creating Build Pipelines
+•  Steps:
+	•  Install IntelliJ IDEA, create Maven project.
+	•  Configure Git, push to GitHub.
+	•  Create Azure Pipeline with YAML (Maven build, publish test results).
+	•  Run pipeline, verify test reports.
+
+Experiment 11: Creating Release Pipelines
+•  Overview:
+	•  Deploy to Azure App Service, manage secrets with Azure Key Vault.
+•  Steps:
+	•  Create release pipeline, add artifact, configure Azure App Service deploy task.
+	•  Set up Key Vault, link to variable group, enable continuous deployment.
+	•  Trigger release, verify deployment.
